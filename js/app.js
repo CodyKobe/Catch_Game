@@ -14,9 +14,12 @@ function Coin() {
 }
 
 function Game() {
-
     this.board = document.querySelectorAll( "section#board div" );
     this.furry = new Furry();
     this.coin = new Coin();
     this.score = 0;
+
+    this.index = function( x, y ) {
+        return y * 10 + x;
+    }
 }
