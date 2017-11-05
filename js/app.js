@@ -47,7 +47,29 @@ function Game() {
     this.startGame = function() {
         this.idSetInterval = setInterval( self.moveFurry, 250 );
     }
+
+    this.turnFurry = function( event ) {
+        switch( event.which ) {
+            case 37:
+                this.furry.direction = 'left';
+                break;
+            case 38:
+                this.furry.direction = 'top';
+                break;
+            case 39:
+                this.furry.direction = 'right';
+                break;
+            case 40:
+                this.furry.direction = 'bottom';
+                break;
+        }
+    }
+    document.addEventListener( 'keydown', function( event ) {
+        self.turnFurry( event );
+    } );
+
 }
+
 var newGame = new Game();
 newGame.showFurry();
 newGame.showCoin();

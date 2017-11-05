@@ -88,14 +88,14 @@ function Game() {
         return y * 10 + x;
     }
     this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
+
     this.showFurry = function() {
         self.hideVisibleFurry();
         this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
     }
-
-    this.hideVisibleFurry = function(){
-        var eraseFurrry = document.querySelector(".furry");
-        eraseFurrry.classList.remove("furry");
+    this.hideVisibleFurry = function() {
+        var eraseFurrry = document.querySelector( ".furry" );
+        eraseFurrry.classList.remove( "furry" );
     }
     var self = this;
     this.showCoin = function() {
@@ -116,7 +116,29 @@ function Game() {
     this.startGame = function() {
         this.idSetInterval = setInterval( self.moveFurry, 250 );
     }
+
+    this.turnFurry = function( event ) {
+        switch( event.which ) {
+            case 37:
+                this.furry.direction = 'left';
+                break;
+            case 38:
+                this.furry.direction = 'top';
+                break;
+            case 39:
+                this.furry.direction = 'right';
+                break;
+            case 40:
+                this.furry.direction = 'bottom';
+                break;
+        }
+    }
+    document.addEventListener( 'keydown', function( event ) {
+        self.turnFurry( event );
+    } );
+
 }
+
 var newGame = new Game();
 newGame.showFurry();
 newGame.showCoin();
