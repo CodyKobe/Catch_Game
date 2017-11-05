@@ -63,7 +63,7 @@ section#over pre {
     display: inline-block;
     width: 100%;
     text-align: center;
-    font-size: 10px;
+    font-size: 10rem;
     font-weight: bolder;
     color: brown;
 }
