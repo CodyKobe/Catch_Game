@@ -70,6 +70,11 @@ function Game() {
         self.turnFurry( event );
     } );
 
+    this.refreshPageScore = function() {
+        var score = document.querySelector( "#score strong" );
+        score.innerText = self.score;
+    }
+
     this.checkCoinCollision = function() {
         if( self.coin.x == self.furry.x && self.coin.y == self.furry.y ) {
             console.log( 'fff' );
@@ -81,7 +86,7 @@ function Game() {
         }
     }
 
-    this.hideVisibleCoin = function(){
+    this.hideVisibleCoin = function() {
         var eraseCoin = document.querySelector( ".coin" );
         eraseCoin.classList.remove( "coin" );
     }

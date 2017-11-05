@@ -139,12 +139,26 @@ function Game() {
         self.turnFurry( event );
     } );
 
+    this.refreshPageScore = function() {
+        var score = document.querySelector( "#score strong" );
+        score.innerText = self.score;
+    }
+
     this.checkCoinCollision = function() {
-        if( self.coin.x == self.furry.x && self.coin.y == self.furry.y  ){
-            console.log('fff');
+        if( self.coin.x == self.furry.x && self.coin.y == self.furry.y ) {
+            console.log( 'fff' );
+            self.hideVisibleCoin();
+            self.score++;
+            self.refreshPageScore();
+            self.coin = new Coin();
+            self.showCoin();
         }
     }
 
+    this.hideVisibleCoin = function() {
+        var eraseCoin = document.querySelector( ".coin" );
+        eraseCoin.classList.remove( "coin" );
+    }
 }
 
 var newGame = new Game();
