@@ -24,11 +24,21 @@ function Game() {
     this.showCoin = function() {
         this.board[ this.index( this.coin.x, this.coin.y ) ].classList.add( 'coin' )
     }
-
+    var self = this;
+    this.moveFurry = function() {
+        if( self.furry.direction === "right" ) {
+            self.furry.x = self.furry.x + 1;
+        } else if( self.furry.direction === "left" ) {
+            self.furry.x = self.furry.x - 1;
+        } else if( self.furry.direction === "bottom" ) {
+            self.furry.y = self.furry.y + 1;
+        } else if( self.furry.direction === "top" ) {
+            self.furry.y = self.furry.y - 1;
+        }
+        self.showFurry();
+    }
     this.startGame = function() {
-        this.idSetInterval = setInterval( function() {
-            console.log( 'hura z setIntervala' )
-        }, 250 );
+        this.idSetInterval = setInterval( self.moveFurry, 250 );
     }
 }
 var newGame = new Game();
