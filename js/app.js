@@ -18,13 +18,20 @@ function Game() {
     this.index = function( x, y ) {
         return y * 10 + x;
     }
+    this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
+
     this.showFurry = function() {
+        self.hideVisibleFurry();
         this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
     }
+    this.hideVisibleFurry = function() {
+        var eraseFurrry = document.querySelector( ".furry" );
+        eraseFurrry.classList.remove( "furry" );
+    }
+    var self = this;
     this.showCoin = function() {
         this.board[ this.index( this.coin.x, this.coin.y ) ].classList.add( 'coin' )
     }
-    var self = this;
     this.moveFurry = function() {
         if( self.furry.direction === "right" ) {
             self.furry.x = self.furry.x + 1;
