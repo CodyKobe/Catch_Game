@@ -67,8 +67,6 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-console.log( 'hello' );
-
 function Furry() {
     this.x = 0;
     this.y = 0;
@@ -89,18 +87,23 @@ function Game() {
     this.index = function( x, y ) {
         return y * 10 + x;
     }
-
     this.showFurry = function() {
         this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
     }
-
     this.showCoin = function() {
         this.board[ this.index( this.coin.x, this.coin.y ) ].classList.add( 'coin' )
+    }
+
+    this.startGame = function() {
+        this.idSetInterval = setInterval( function() {
+            console.log( 'hura z setIntervala' )
+        }, 250 );
     }
 }
 var newGame = new Game();
 newGame.showFurry();
 newGame.showCoin();
+newGame.startGame();
 
 
 /***/ })
