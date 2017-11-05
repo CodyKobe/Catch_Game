@@ -81,6 +81,10 @@ function Game() {
         }
     }
 
+    this.hideVisibleCoin = function(){
+        var eraseCoin = document.querySelector( ".coin" );
+        eraseCoin.classList.remove( "coin" );
+    }
 }
 
 var newGame = new Game();
