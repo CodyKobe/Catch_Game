@@ -98,5 +98,4 @@ function Game() {
         return true;
     }
 }
-
 module.exports = Game;

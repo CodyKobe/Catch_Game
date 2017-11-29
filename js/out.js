@@ -205,6 +205,5 @@ function Coin() {
 }
 module.exports = Coin;
 
-
 /***/ })
 /******/ ]);
