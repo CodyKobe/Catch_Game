@@ -68,7 +68,6 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 var Game = __webpack_require__(1);
-
 var newGame = new Game();
 newGame.showFurry();
 newGame.showCoin();
@@ -179,7 +178,6 @@ function Game() {
         return true;
     }
 }
-
 module.exports = Game;
 
 
@@ -192,6 +190,7 @@ function Furry() {
     this.y = 0;
     this.direction = "right";
 }
+
 module.exports = Furry;
 
 
@@ -203,7 +202,9 @@ function Coin() {
     this.x = Math.floor( Math.random() * 10 );
     this.y = Math.floor( Math.random() * 10 );
 }
+
 module.exports = Coin;
+
 
 /***/ })
 /******/ ]);
