@@ -99,8 +99,8 @@ function Game() {
         this.board[ this.index( this.furry.x, this.furry.y ) ].classList.add( 'furry' );
     }
     this.hideVisibleFurry = function() {
-        var eraseFurrry = document.querySelector( ".furry" );
-        eraseFurrry.classList.remove( "furry" );
+        var eraseFurry = document.querySelector( ".furry" );
+        eraseFurry.classList.remove( "furry" );
     }
     this.showCoin = function() {
         this.board[ this.index( this.coin.x, this.coin.y ) ].classList.add( 'coin' )
